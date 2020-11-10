@@ -121,7 +121,8 @@ module.exports = {
             ['/general/architecture', 'Architecture'],
             ['/general/i18n', 'i18n'],
             ['/general/faceting', 'Faceting'],
-            ['/general/logging', 'Logging']
+            ['/general/logging', 'Logging'],
+            ['/general/caching', 'Caching']
           ]
         },
         {
@@ -142,6 +143,7 @@ module.exports = {
             ['/integrate/ecommerce', 'eCommerce'],
             ['/general/cms', 'CMS'],
             ['/integrate/api-middleware', 'API middleware'],
+
           ]
         },
         {
