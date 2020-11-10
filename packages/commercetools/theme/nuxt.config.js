@@ -39,6 +39,13 @@ export default {
     '@nuxt/typescript-build',
     ['@vue-storefront/nuxt', {
       coreDevelopment: true,
+      cache: {
+        server: {
+          invalidateEndpoint: '/cache-invalidate',
+          invalidators: ['./invalidator'],
+          driver: ['./exampleCache', { test: 1 }]
+        }
+      },
       logger: {
         verbosity: 'error'
       },

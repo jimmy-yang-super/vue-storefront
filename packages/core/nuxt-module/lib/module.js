@@ -49,7 +49,7 @@ module.exports = function VueStorefrontNuxtModule (moduleOptions) {
     name: 'generator',
     content: 'Vue Storefront 2'
   })
-  
+
   this.addPlugin(path.resolve(__dirname, 'plugins/ssr.js'))
   log.success('Installed Vue Storefront SSR plugin');
 
@@ -61,6 +61,7 @@ module.exports = function VueStorefrontNuxtModule (moduleOptions) {
 
   this.addModule('@nuxtjs/composition-api')
   log.success('Installed nuxt Composition API Module');
+
 
   //-------------------------------------
 
@@ -92,6 +93,9 @@ module.exports = function VueStorefrontNuxtModule (moduleOptions) {
   options.useRawSource[isProd || options.coreDevelopment ? 'prod' : 'dev'].map(package => {
     useRawSource(package);
   });
+
+  this.addModule([path.resolve(__dirname, 'cache/module.js'), moduleOptions.cache])
+  log.success('Installed cache');
 }
 
 module.exports.meta = require('../package.json')
